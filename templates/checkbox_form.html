@@ -14,7 +14,7 @@
                 <tr>
                     
                     <th><h2>Select Your Pizza Toppings</h2></th>
-                    <th><h2>Input type</h2></th>
+                    <th><h2>Your choices</h2></th>
                 </tr>
                 <tr>
                     <td>
@@ -23,9 +23,12 @@
                         {% endfor %}
                     </td>  
                     <td>
-                        <label><input type="radio" name="input-type" value="radio" />Radio</label><br>
-                        <label><input type="radio" name="input-type" value="checkbox"/>Checkbox</label><br>
-                        <button>Update</button>
+                        <ul>
+                        {% for choice in choices %}
+                        
+                            <li>{{choice}}</li>
+                        {% endfor %}
+                        </ul>
                     </td>
                 </tr> 
                 <tr>  
