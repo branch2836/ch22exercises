@@ -11,3 +11,25 @@
     position: fixed;
     bottom:0;
  }
+
+ .dropdown {
+    position: relative;
+ }
+ 
+ .droptitle {
+    margin-bottom: 0px;
+ }
+ 
+ .dropdown-content {
+    display: none;  /* Hides content */
+    position: absolute;
+    margin-top: 0px;
+    background-color: white;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 10px 15px;
+ }
+ 
+ .dropdown:hover .dropdown-content {
+    display: block;  /* Displays content */
+ }

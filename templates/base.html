@@ -14,6 +14,15 @@
     </header>
     {% block content %}
     {% endblock %}
+    <nav class="dropdown">
+        <h3 class="droptitle">Page Navigation</h3>
+        <ul class="dropdown-content">
+            {% for (text, path) in navigation.items() %}
+                <li><a href={{path}}>{{text}}</a></li>
+            {% endfor %}
+        </ul>
+    
+    </nav>
     <footer class="footer-background">
         <p>Pizza Place Inc</p>
     </footer>
