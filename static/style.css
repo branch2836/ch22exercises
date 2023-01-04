@@ -1,0 +1,13 @@
+.head-background {
+    padding: 10px 0;
+    text-align: center;
+    background-image: radial-gradient(#419f6a 60%, #3c79b8 40%);
+ }
+
+ .footer-background {
+
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom:0;
+ }

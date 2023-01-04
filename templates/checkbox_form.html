@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Checkbox Logic</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body>
-        <h1>{{input.capitalize()}} Logic</h1>
-        
-        <form action="/" method="POST">
-            <table>
-                <tr>
-                    
-                    <th><h2>Select Your Pizza Toppings</h2></th>
-                    <th><h2>Your choices</h2></th>
-                </tr>
-                <tr>
-                    <td>
-                        {% for topping in pizza_toppings %}
-                        <label><input type="{{input}}" name="toppings" value="{{topping}}"/>{{topping}}</label><br>
-                        {% endfor %}
-                    </td>  
-                    <td>
-                        <ul>
-                        {% for choice in choices %}
-                        
-                            <li>{{choice}}</li>
-                        {% endfor %}
-                        </ul>
-                    </td>
-                </tr> 
-                <tr>  
-                    <td><button>Submit</button></td>
-                </tr>
-            </table>
-        </form>
-    </body>
-</html>
+{% extends "base.html" %}
+
+    {% block content %}
+    
+    <form action="/" method="POST">
+        <table>
+            <tr>
+                <th><h2>Select Your Pizza Toppings</h2></th>
+            </tr>
+            <tr>
+                <td>
+                    {% for topping in pizza_toppings %}
+                    <label><input type="{{input}}" name="toppings" value="{{topping}}"/>{{topping.capitalize()}}</label><br>
+                    {% endfor %}
+                </td>  
+            </tr> 
+            <tr>  
+                <td><button>Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    {% if choices|length >0 %}
+        <section>
+            <h2>Your Choices</h2>
+            <ul>
+                {% for choice in choices %}
+                <li>{{choice.capitalize()}}</li>
+                {% endfor %}
+            </ul>
+        </section>      
+    {% endif %}
+    {% endblock %}
