@@ -2,4 +2,13 @@
 
     {% block content %}
     <h2>Look! A second page!</h2>
+    <section class="centered">
+        <form action="/second" method="POST">
+            <h3>Move to the third page?</h3>
+            <label><input type="radio" name="choice" value="yes"/>Yes</label>
+            <label><input type="radio" name="choice" value="no"/>No</label>
+            <section class="centered">
+                <button>Submit</button>
+            </section>
+        </form>
     {% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -26,6 +26,14 @@ def checkbox_form():
 def second_page():
     tab_title= 'Template Logic'
     page_title='Second Page'
+
+    if request.method == 'POST':
+        choice = request.form['choice']
+        if choice == 'yes':
+            return render_template('third.html', tab_title = tab_title,
+            page_title = page_title, navigation = navigation)
+        else:
+            page_title = "Welcome Back!"
 
     return render_template('second.html', tab_title=tab_title, page_title=page_title , navigation = navigation)
 
